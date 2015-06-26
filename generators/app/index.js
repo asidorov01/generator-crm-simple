@@ -15,7 +15,7 @@ function convert_name(name) {
       upper_name: _.swapCase(_.underscored(name)),
       classify_name: _.classify(name),
       dashed_name: _.dasherize(name),
-      human_name: _.humanize(name),
+      human_name: _.humanize(name)
   }
 }
 module.exports = yeoman.generators.NamedBase.extend({
@@ -133,7 +133,7 @@ module.exports = yeoman.generators.NamedBase.extend({
     // Have Yeoman greet the user.
     this.log(yosay(
       'Add href to menu: ' +
-      chalk.red('#/'+_.camelize(this.name)) +"\n" +
+      chalk.red('#/'+_.dasherize(this.name)) +"\n" +
       'Add menu title: '+
       chalk.red(_.swapCase(_.underscored((this.name)))  + ' ')
     ));

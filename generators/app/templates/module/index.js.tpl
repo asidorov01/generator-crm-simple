@@ -4,7 +4,7 @@ angular.module('<%= module_name %>', [])
 
     // Routes
     .config(function ($routeProvider) {
-        $routeProvider.when('/<%= camel_case_name %>s', {
+        $routeProvider.when('/<%= dashed_name %>s', {
             templateUrl: 'app/<%= camel_case_name %>/partials/index.html',
             security: true
         });
