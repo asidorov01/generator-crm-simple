@@ -22,7 +22,7 @@
 
         </div>
 
-        <div class="aside-footer">
+        <div class="text-right">
             <button type="submit" class="btn btn-primary">
                 <i class="fa fa-save margin-right-10"></i>{{'SAVE' | translate}}
             </button>

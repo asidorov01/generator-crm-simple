@@ -33,7 +33,6 @@
 
 <div class="row">
     <div class="col-xs-12">
-        <div records-count class="records-count-wrapper" data-translation-block="_<%= upper_name %>_.RECORDS_COUNT" ng-model="list.page.totalElements"></div>
 
         <div class="pull-right">
             <pagination class="pagination-sm" ng-show="list.page.totalPages > 1"
