@@ -21,9 +21,9 @@ angular.module('<%= module_name %>')
 
             //@TODO Move representation into the Template
             if (scope.form.objectId) {
-                scope.title = $translate.instant('_<%= upper_name %>_.<%= upper_name %>_EDITING');
+                scope.title = $translate.instant('_<%= upper_name %>_.EDITING');
             } else {
-                scope.title = $translate.instant('_<%= upper_name %>_.<%= upper_name %>_ADDING');
+                scope.title = $translate.instant('_<%= upper_name %>_.ADDING');
             }
 
             var aside = $aside({
