@@ -4,7 +4,7 @@
         <table class="table table-striped table-bordered table-hover no-footer">
             <thead>
             <tr>
-                <th class="col-xs-11">{{'<%= upper_name %>' | translate}}</th>
+                <th class="col-xs-11">{{'NAME' | translate}}</th>
                 <th class="col-xs-1 text-center">{{'ACTION' | translate}}</th>
             </tr>
             </thead>
