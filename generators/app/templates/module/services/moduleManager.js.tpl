@@ -5,14 +5,15 @@
  */
 angular.module('<%= module_name %>')
 
-    .factory('<%= camel_case_name %>Manager', function ($rootScope, <%= camel_case_name %>, ENV, <%= upper_name %>_END_POINT, <%= upper_name %>_EVENTS) {
+    .factory('<%= classify_name %>Manager', function ($rootScope, <%= classify_name %>, ENV, <%= upper_name %>_END_POINT, <%= upper_name %>_EVENTS) {
 
         var service = {
             search: search,
             remove: remove,
-            <%= camel_case_name %>: <%= camel_case_name %>,
+            <%= classify_name %>: <%= classify_name %>,
             get: get,
-            bindForm: bindForm
+            bindForm: bindForm,
+            generateLink: generateLink
         };
 
         return service;
@@ -28,19 +29,19 @@ angular.module('<%= module_name %>')
                 var rPage = page -1;
             }
 
-            return <%= camel_case_name %>.query({page: rPage}, function() {
+            return <%= classify_name %>.query({page: rPage}, function() {
                 $rootScope.$emit(<%= upper_name %>_EVENTS.COMPLETED_REQUEST);
             });
         }
 
         function remove(<%= camel_case_name %>Id) {
-                <%= camel_case_name %>.remove({id: <%= camel_case_name %>Id}, function () {
+                <%= classify_name %>.remove({id: <%= camel_case_name %>Id}, function () {
                 $rootScope.$emit(<%= upper_name %>_EVENTS.UPDATED);
             });
         }
 
         function get(id) {
-            return <%= camel_case_name %>.get({id: id}, function() {
+            return <%= classify_name %>.get({id: id}, function() {
                 $rootScope.$emit(<%= upper_name %>_EVENTS.COMPLETED_FORM_REQUEST);
             });
         }
@@ -63,5 +64,10 @@ angular.module('<%= module_name %>')
 
             return form;
         }
+
+        function generateLink(id) {
+            return ENV.apiBase() + <%= upper_name %>_END_POINT + "/"+id;
+        }
+
     })
 ;

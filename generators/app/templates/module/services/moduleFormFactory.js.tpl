@@ -5,7 +5,7 @@
  */
 angular.module('<%= module_name %>')
 
-    .factory('<%= camel_case_name %>FormFactory', function (ENV, $aside, $translate, $rootScope, <%= camel_case_name %>, $q, <%= camel_case_name %>Manager, <%= upper_name %>_EVENTS, Preloader) {
+    .factory('<%= classify_name %>FormFactory', function (ENV, $aside, $translate, $rootScope, <%= classify_name %>, $q, <%= classify_name %>Manager, <%= upper_name %>_EVENTS, Preloader) {
 
         function FormFactory (config) {
 
@@ -21,14 +21,14 @@ angular.module('<%= module_name %>')
 
             //@TODO Move representation into the Template
             if (scope.form.objectId) {
-                scope.title = $translate.instant('_<%= upper_name %>_.<%= upper_name %>_EDITING');
+                scope.title = $translate.instant('_<%= upper_name %>_.EDITING');
             } else {
-                scope.title = $translate.instant('_<%= upper_name %>_.<%= upper_name %>_ADDING');
+                scope.title = $translate.instant('_<%= upper_name %>_.ADDING');
             }
 
             var aside = $aside({
                 title: scope.title,
-                contentTemplate: 'app/<%= camel_case_name %>/partials/<%= camel_case_name %>Form.html',
+                contentTemplate: 'app/<%= camel_case_name %>/partials/<%= classify_name %>Form.html',
                 scope: scope,
                 show: false
             });
@@ -42,7 +42,7 @@ angular.module('<%= module_name %>')
                 aside.$promise.then(function () {
                     aside.show();
 
-                    scope.form = <%= camel_case_name %>Manager.bindForm(scope.form);
+                    scope.form = <%= classify_name %>Manager.bindForm(scope.form);
                 });
             };
 

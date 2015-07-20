@@ -82,19 +82,19 @@ module.exports = yeoman.generators.NamedBase.extend({
     services: function () {
       this.fs.copyTpl(
           this.templatePath('module/services/Resource.js.tpl'),
-          this.destinationPath(dst_prefix+_.camelize(this.name)+'/services/'+_.camelize(this.name)+'.js'),
+          this.destinationPath(dst_prefix+_.camelize(this.name)+'/services/'+_.classify(this.name)+'.js'),
           convert_name(this.name)
       );
 
       this.fs.copyTpl(
           this.templatePath('module/services/moduleFormFactory.js.tpl'),
-          this.destinationPath(dst_prefix+_.camelize(this.name)+'/services/'+_.camelize(this.name)+'FormFactory.js'),
+          this.destinationPath(dst_prefix+_.camelize(this.name)+'/services/'+_.classify(this.name)+'FormFactory.js'),
           convert_name(this.name)
       );
 
       this.fs.copyTpl(
           this.templatePath('module/services/moduleManager.js.tpl'),
-          this.destinationPath(dst_prefix+_.camelize(this.name)+'/services/'+_.camelize(this.name)+'Manager.js'),
+          this.destinationPath(dst_prefix+_.camelize(this.name)+'/services/'+_.classify(this.name)+'Manager.js'),
           convert_name(this.name)
       );
 

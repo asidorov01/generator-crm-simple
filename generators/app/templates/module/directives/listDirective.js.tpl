@@ -2,7 +2,7 @@
 
 angular.module('<%= module_name %>')
 
-.directive('<%= camel_case_name %>List', function (<%= camel_case_name %>Manager, $rootScope, <%= upper_name %>_EVENTS, Preloader) {
+.directive('<%= camel_case_name %>List', function (<%= classify_name %>Manager, $rootScope, <%= upper_name %>_EVENTS, Preloader) {
     return {
         restrict: 'E',
         templateUrl: 'app/<%= camel_case_name %>/partials/<%= camel_case_name %>List.html',
@@ -14,7 +14,7 @@ angular.module('<%= module_name %>')
 
             /** @Bug in Angular UI */
             scope.loadPage = function () {
-                <%= camel_case_name %>Manager.search(null, scope.currentPage)
+                <%= classify_name %>Manager.search(null, scope.currentPage)
                     .$promise
                     .then(function(res) {
                         scope.list = res;
@@ -23,7 +23,7 @@ angular.module('<%= module_name %>')
 
             scope.loadPage();
 
-            scope.removeModel = <%= camel_case_name %>Manager.remove;
+            scope.removeModel = <%= classify_name %>Manager.remove;
 
             /**
              * Iteraction events
