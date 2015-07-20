@@ -4,7 +4,7 @@
         <table class="table table-striped table-bordered table-hover no-footer">
             <thead>
             <tr>
-                <th class="col-xs-11">{{'<%= upper_name %>' | translate}}</th>
+                <th class="col-xs-11">{{'NAME' | translate}}</th>
                 <th class="col-xs-1 text-center">{{'ACTION' | translate}}</th>
             </tr>
             </thead>
@@ -33,7 +33,6 @@
 
 <div class="row">
     <div class="col-xs-12">
-        <div records-count class="records-count-wrapper" data-translation-block="_<%= upper_name %>_.RECORDS_COUNT" ng-model="list.page.totalElements"></div>
 
         <div class="pull-right">
             <pagination class="pagination-sm" ng-show="list.page.totalPages > 1"
