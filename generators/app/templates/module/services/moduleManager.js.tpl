@@ -28,8 +28,9 @@ angular.module('<%= module_name %>')
             if (page > 0) {
                 var rPage = page -1;
             }
+            var searchCriterias = angular.extend({}, criteria, {page: rPage});
 
-            return <%= classify_name %>.query({page: rPage}, function() {
+            return <%= classify_name %>.query(searchCriterias, function() {
                 $rootScope.$emit(<%= upper_name %>_EVENTS.COMPLETED_REQUEST);
             });
         }
