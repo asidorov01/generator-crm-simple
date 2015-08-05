@@ -20,10 +20,14 @@
             </div>
         </div>
 
-        <div class="text-right">
-            <button type="submit" class="btn btn-primary">
-                <i class="fa fa-save margin-right-10"></i>{{'SAVE' | translate}}
-            </button>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save margin-right-10"></i>{{'SAVE' | translate}}
+                    </button>
+                </div>
+            </div>
         </div>
 
     </div>
