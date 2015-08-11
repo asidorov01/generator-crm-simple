@@ -42,7 +42,7 @@ angular.module('<%= module_name %>')
                 aside.$promise.then(function () {
                     aside.show();
 
-                    scope.form = <%= camel_case_name %>Manager.bindForm(scope.form);
+                    scope.form = <%= classify_name %>Manager.bindForm(scope.form);
                 });
             };
 
