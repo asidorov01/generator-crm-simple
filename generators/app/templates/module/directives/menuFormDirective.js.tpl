@@ -9,7 +9,7 @@ angular.module('<%= module_name %>')
 
                 element.click(function () {
                     <%= classify_name %>FormFactory({
-                        scope: scope.$new(),
+                        scope: scope,
                         <%= camel_case_name %>Id: attrs.<%= camel_case_name %>Id
                     }).show();
                 });

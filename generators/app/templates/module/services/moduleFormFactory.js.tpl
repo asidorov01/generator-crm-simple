@@ -34,7 +34,7 @@ angular.module('<%= module_name %>')
             });
 
             scope.onSuccess = function () {
-                $rootScope.$emit(<%= upper_name %>_EVENTS.UPDATED);
+                $rootScope.$broadcast(<%= upper_name %>_EVENTS.UPDATED);
                 form.hide();
             };
 
@@ -54,11 +54,11 @@ angular.module('<%= module_name %>')
             /**
              * Preloaders
              */
-            $rootScope.$on(<%= upper_name %>_EVENTS.START_FORM_REQUEST, function() {
+            scope.$on(<%= upper_name %>_EVENTS.START_FORM_REQUEST, function() {
                 Preloader.show("<%= dashed_name %>-form");
             });
 
-            $rootScope.$on(<%= upper_name %>_EVENTS.COMPLETED_FORM_REQUEST, function() {
+            scope.$on(<%= upper_name %>_EVENTS.COMPLETED_FORM_REQUEST, function() {
                 Preloader.hide("<%= dashed_name %>-form");
             });
 

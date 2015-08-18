@@ -2,7 +2,7 @@
 
 angular.module('<%= module_name %>')
 
-.directive('<%= camel_case_name %>List', function (<%= classify_name %>Manager, $rootScope, <%= upper_name %>_EVENTS, Preloader) {
+.directive('<%= camel_case_name %>List', function (<%= classify_name %>Manager, <%= upper_name %>_EVENTS, Preloader) {
     return {
         restrict: 'E',
         templateUrl: 'app/<%= camel_case_name %>/partials/<%= camel_case_name %>List.html',
@@ -28,18 +28,18 @@ angular.module('<%= module_name %>')
             /**
              * Iteraction events
              */
-            $rootScope.$on(<%= upper_name %>_EVENTS.UPDATED, function() {
+            scope.$on(<%= upper_name %>_EVENTS.UPDATED, function() {
                 scope.list = scope.loadPage();
             });
 
             /**
              * Preloader events
              */
-            $rootScope.$on(<%= upper_name %>_EVENTS.START_REQUEST, function() {
+            scope.$on(<%= upper_name %>_EVENTS.START_REQUEST, function() {
                 Preloader.show("<%= dashed_name %>-list");
             });
 
-            $rootScope.$on(<%= upper_name %>_EVENTS.COMPLETED_REQUEST, function() {
+            scope.$on(<%= upper_name %>_EVENTS.COMPLETED_REQUEST, function() {
                 Preloader.hide("<%= dashed_name %>-list");
             });
 
